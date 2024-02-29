@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function authLayout({
     children,
@@ -13,9 +14,13 @@ export default function authLayout({
       {name: "Login", href: "/login"},
       {name: "Forget Password", href: "/forget-password"}
     ]
+
+    const [inputVal, setInputVal] = useState('')
+
     return (
         <>
-        Inner auth layout
+        <input value={inputVal} onChange={e => setInputVal(e.target.value)} />
+        <h1>Inner auth layout</h1>
         {navLinks.map((item, index) => {
           const isActive = pathname.startsWith(item.href)
           return (
