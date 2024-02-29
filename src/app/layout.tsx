@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{textAlign: "center"}}>
         <header style={{ backgroundColor: "lightblue", padding: '1rem' }}>Header</header>
         {children}
         <footer style={{ backgroundColor: "ghostwhite", padding: '1rem' }}>Footer</footer>
