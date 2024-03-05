@@ -3,10 +3,12 @@ interface ComplexDashboardLayoutProps {
     users: React.ReactNode;
     revenue: React.ReactNode;
     notifications: React.ReactNode;
+    login: React.ReactNode;
 }
 
-export default function ComplexDashboardLayout({ children, users, revenue, notifications }: ComplexDashboardLayoutProps) {
-    return (
+export default function ComplexDashboardLayout({ children, users, revenue, notifications, login }: ComplexDashboardLayoutProps) {
+    const isLoggedIn = false
+    return isLoggedIn ? (
         <>
             <div>{children}</div>
             <div style={{ display: "flex" }}>
@@ -19,6 +21,8 @@ export default function ComplexDashboardLayout({ children, users, revenue, notif
                 </div>
             </div>
         </>
+    ) : (
+        login
     )
 
 }
